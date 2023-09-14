@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+
+  <meta charset='UTF-8'>
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/natszafraniec/pen/abYNbaJ">
+
+  
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&amp;display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=BJ7VRhji4zKd6baU_qQlCK8ya3c8Bt-6w2FXts0tTDpx4MZNMwQoC4CMDRNY1bw-7Gq9F3oXjxiYL659D4CYzJbYDyfber6VlKUcmm3ZTnqygs9q34EL4KXpW7Ewbi0OHqFay__jgDHyhkwXnURRXA" charset="UTF-8"></script><style id="INLINE_PEN_STYLESHEET_ID">
+    html, body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-content: center;
+}
+
+.btn {
+  background: hsl(var(--hue), 98%, 80%);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  color: black;
+  font: 6000 1.05rem/1 "Nunito", sans-serif;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  padding: 1.15em 3.5em;
+  min-height: 3.3em;
+  position: relative;
+  text-transform: lowercase;
+}
+.btn--yellow {
+  --hue: 46;
+}
+.btn--green {
+  --hue: 163;
+}
+.btn--purple {
+  --hue: 244;
+}
+.btn--red {
+  --hue: 0;
+}
+.btn--blue {
+  --hue: 210;
+}
+.btn:active, .btn:focus {
+  outline: 3px solid hsl(calc(var(--hue) + 90), 98%, 80%);
+}
+.btn + .btn {
+  margin-top: 2.5em;
+}
+.btn__txt {
+  position: relative;
+  z-index: 2;
+}
+.btn__bg {
+  background: hsl(var(--hueBg), 98%, 80%);
+  border-radius: 50%;
+  display: block;
+  height: 0;
+  left: 50%;
+  margin: -50% 0 0 -50%;
+  padding-top: 100%;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: scale(0);
+  transform-origin: 50% 50%;
+  transition: transform 0.175s cubic-bezier(0.5, 1, 0.89, 1);
+  z-index: 1;
+}
+.btn__bg:nth-of-type(1) {
+  --hueBg: calc(var(--hue) - 90);
+  transition-delay: 0.1725s;
+}
+.btn__bg:nth-of-type(2) {
+  --hueBg: calc(var(--hue) - 180);
+  transition-delay: 0.115s;
+}
+.btn__bg:nth-of-type(3) {
+  --hueBg: calc(var(--hue) - 270);
+  transition-delay: 0.0575s;
+}
+.btn__bg:nth-of-type(4) {
+  --hueBg: calc(var(--hue) - 360);
+  transition-delay: 0s;
+}
+.btn:hover .btn__bg, .btn:focus .btn__bg, .btn:active .btn__bg {
+  transform: scale(1.5);
+  transition: transform 0.35s cubic-bezier(0.11, 0, 0.5, 0);
+}
+.btn:hover .btn__bg:nth-of-type(1), .btn:focus .btn__bg:nth-of-type(1), .btn:active .btn__bg:nth-of-type(1) {
+  transition-delay: 0.115s;
+}
+.btn:hover .btn__bg:nth-of-type(2), .btn:focus .btn__bg:nth-of-type(2), .btn:active .btn__bg:nth-of-type(2) {
+  transition-delay: 0.23s;
+}
+.btn:hover .btn__bg:nth-of-type(3), .btn:focus .btn__bg:nth-of-type(3), .btn:active .btn__bg:nth-of-type(3) {
+  transition-delay: 0.345s;
+}
+.btn:hover .btn__bg:nth-of-type(4), .btn:focus .btn__bg:nth-of-type(4), .btn:active .btn__bg:nth-of-type(4) {
+  transition-delay: 0.46s;
+}
+  </style>
+
+  
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6d8bf8b4b479137260842506acbb12717dace0823c023e08b96360e60b0840d9.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+</head>
+
+<body>
+  <button type="button" class="btn btn--purple">
+	<span class="btn__txt">Purple button</span>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+</button>
+
+<button type="button" class="btn btn--green">
+	<span class="btn__txt">Green button</span>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+</button>
+
+<button type="button" class="btn btn--red">
+	<span class="btn__txt">Red button</span>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+</button>
+
+<button type="button" class="btn btn--blue">
+	<span class="btn__txt">Blue button</span>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+</button>
+
+
+<button type="button" class="btn btn--yellow">
+	<span class="btn__txt">Yellow button</span>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+	<i class="btn__bg" aria-hidden="true"></i>
+</button>
+
+  
+  
+</body>
+
+</html>
